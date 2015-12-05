@@ -1,0 +1,3 @@
+rootProject.name = 'OhmpiengApp'
+
+include ':app'
