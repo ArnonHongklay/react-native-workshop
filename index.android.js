@@ -1,21 +1,14 @@
-'use strict';
-
 var React = require('react-native');
+var { requireNativeComponent } = React;
 
+class OhmpiengApp extends React.Component {
+  render() {
+    return <NativeOhmpiengApp {...this.props} />;
+  }
+}
+OhmpiengApp.propTypes = {
+  myCustomProperty: React.PropTypes.oneOf(['a', 'b']),
+};
 
-var {
-    AppRegistry,
-    Component,
-    Navigator,
-    MySceneComponent
-  } = React;
-
-var styles = React.StyleSheet.create({
-
-});
-
-var OhmpiengApp = React.createClass({
-
-});
-
-React.AppRegistry.registerComponent('OhmpiengApp', () => OhmpiengApp);
+var NativeOhmpiengApp = requireNativeComponent('OhmpiengApp', OhmpiengApp);
+module.exports = OhmpiengApp;
